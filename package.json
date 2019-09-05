@@ -1,0 +1,15 @@
+{
+  "name": "iot-device-simulator",
+  "version": "1.0.0",
+  "description": "simulate an iot device that sends data to azure iot hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aditya7k",
+  "license": "ISC",
+  "dependencies": {
+    "azure-iot-device": "^1.11.1",
+    "azure-iot-device-amqp": "^1.10.2"
+  }
+}

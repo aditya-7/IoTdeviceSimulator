@@ -1,0 +1,3 @@
+{
+    "connection-string": "HostName=myiothub66.azure-devices.net;SharedAccessKeyName=device;SharedAccessKey=BO4iYUMT1yS7uSxoqhlRWIAMLKJVd6vV92iF2MwYnWk=;"
+}

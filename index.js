@@ -19,9 +19,9 @@ const connectCallback = function (err) {
         if (err) {
             console.log("Error while sending the message", data);
             console.error("The error encountered", err);
-        } else {
-            console.log("Message sent successfully", data);
+            return
         }
+        console.log("Message sent successfully", data);
     });
 };
 

@@ -1,3 +1,6 @@
 {
-    "connection-string": "connection-string"
+    "connection-string": "[Connection String]",
+    "provisioning-host": "global.azure-devices-provisioning.net",
+    "provisioning-id-scope": "[Provisioning Id Scope]",
+    "symmetric-key": "[Symmetric Key]"
 }

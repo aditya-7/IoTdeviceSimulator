@@ -2,13 +2,17 @@
 // const deviceId = "test-device-a23k";
 // const data = "Sent from test-device-a23k";
 
-function send(config, deviceId, data, callback) {
+var client;
+
+function get_client(config, deviceId) {
     const connectionString = config["connection-string"] + "DeviceId=" + deviceId;
     const clientFromConnectionString = require("azure-iot-device-amqp")
         .clientFromConnectionString;
-    const client = clientFromConnectionString(connectionString);
-    const Message = require("azure-iot-device").Message;
+    client = clientFromConnectionString(connectionString);
+}
 
+function send(deviceId, data, callback) {
+    const Message = require("azure-iot-device").Message;
     const connectCallback = function (err) {
         if (err) {
             console.error("Error while connecting to IoT Hub", err);
@@ -30,4 +34,7 @@ function send(config, deviceId, data, callback) {
     client.open(connectCallback);
 }
 
-module.exports = send;
+module.exports = {
+    "send": send,
+    "get_client": get_client
+};

@@ -2,5 +2,6 @@
     "connection-string": "[Connection String]",
     "provisioning-host": "global.azure-devices-provisioning.net",
     "provisioning-id-scope": "[Provisioning Id Scope]",
-    "symmetric-key": "[Symmetric Key]"
+    "symmetric-key": "[Symmetric Key]",
+    "message-interval-minutes": 30
 }

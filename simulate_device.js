@@ -34,13 +34,17 @@ function simulate(deviceId, callback) {
 }
 
 function register_devices(devices) {
-    _.forEach(devices.devices, deviceId => {
-        register_device(config, deviceId, function (err) {
-            if (err) {
-                console.error(err);
-                return
-            }
-        });
+    var timer = 0;
+    _.forEach(devices, deviceId => {
+        setTimeout(function () {
+            register_device(config, deviceId, function (err) {
+                if (err) {
+                    console.error(err);
+                    return
+                }
+            });
+
+        }, timer++ * 30 * 1000);
     });
 }
 
@@ -55,10 +59,6 @@ function create_devices(devices) {
 fs.readFile('./devices.json', 'utf-8', (err, data) => {
     if (err) throw err;
     var devices = JSON.parse(data)["devices"];
-    devices = [
-        "MAC004896", "MAC002881", "MAC004521", "MAC002545",
-        "MAC000645", "MAC005229", "MAC000827", "MAC000608", "MAC001204"
-    ];
     switch (process.argv[2]) {
         case "REGISTER":
             register_devices(devices);
@@ -69,6 +69,7 @@ fs.readFile('./devices.json', 'utf-8', (err, data) => {
             break;
         default:
             console.log("Please provide valid argument");
+            process.exit();
     }
 });
 

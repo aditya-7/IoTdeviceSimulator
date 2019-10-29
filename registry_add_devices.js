@@ -1,7 +1,6 @@
-var iothub = require('azure-iothub');
-var uuid = require('uuid');
-var fs = require("fs");
-var _ = require("lodash");
+const iothub = require('azure-iothub');
+const uuid = require('uuid');
+const _ = require("lodash");
 
 function register(config, devices) {
   var connectionString = config["connection-string"];

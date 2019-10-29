@@ -1,6 +1,6 @@
 const fs = require("fs");
 const config = JSON.parse(fs.readFileSync("config.json"));
-const register_device = require("./register_device");
+const register_device = require("./registry_add_devices");
 const async = require("async");
 const _ = require("lodash");
 
@@ -33,21 +33,6 @@ function simulate(deviceId, callback) {
     callback();
 }
 
-function register_devices(devices) {
-    var timer = 0;
-    _.forEach(devices, deviceId => {
-        setTimeout(function () {
-            register_device(config, deviceId, function (err) {
-                if (err) {
-                    console.error(err);
-                    return
-                }
-            });
-
-        }, timer++ * 30 * 1000);
-    });
-}
-
 function create_devices(devices) {
     const devices_simulation = [];
     for (var i = 0; i < devices.length; i++) {
@@ -61,7 +46,7 @@ fs.readFile('./devices.json', 'utf-8', (err, data) => {
     var devices = JSON.parse(data)["devices"];
     switch (process.argv[2]) {
         case "REGISTER":
-            register_devices(devices);
+            register_device(config, devices);
             break;
         case "SIMULATE":
             const devices_simulation = create_devices(devices);

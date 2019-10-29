@@ -14,6 +14,7 @@
     "azure-iot-provisioning-device": "^1.6.3",
     "azure-iot-provisioning-device-amqp": "^1.6.3",
     "azure-iot-security-symmetric-key": "^1.5.12",
+    "azure-iothub": "^1.11.0",
     "csvdata": "^1.7.0"
   }
 }

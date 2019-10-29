@@ -30,7 +30,6 @@ function register(config, registrationId, callback) {
   provisioningClient.register(function (err, result) {
     if (err) {
       console.error("error registering device ", err);
-      console.log(":::" + err.message + ":::");
       return callback(new Error("Registration of device " + registrationId + " failed"));
     }
     console.log("registration succeeded");

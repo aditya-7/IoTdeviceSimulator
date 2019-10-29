@@ -1,7 +1,3 @@
-// Parameters to be passed for sending message from the device: deviceId, data
-// const deviceId = "test-device-a23k";
-// const data = "Sent from test-device-a23k";
-
 var client;
 
 function get_client(config, deviceId) {

@@ -1,6 +1,3 @@
-// Parameters to be passed for registration of device: deviceId
-// const deviceId = "test-device-a23k";
-
 function register(config, registrationId, callback) {
 
   var crypto = require("crypto");

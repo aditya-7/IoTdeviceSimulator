@@ -1,5 +1,5 @@
 const fs = require("fs");
-const config = JSON.parse(fs.readFileSync("config.1.json"));
+const config = JSON.parse(fs.readFileSync("config.json"));
 const register_device = require("./registry_add_devices");
 const async = require("async");
 const _ = require("lodash");
